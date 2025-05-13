@@ -8,6 +8,11 @@
   - Yeni bir şifre hash’i üretin,
   - Eski hash’i veritabanında yenisi ile değiştirin.
 
+## SQL Admin Ekleme Kod Satırı
+INSERT INTO admins (username, password_hash, full_name) VALUES 
+('admin', 'hashedpassword', 'fullname'); 
+
+
 ### Varsayılan Giriş Bilgileri
 - **Kullanıcı Adı:** `admin`  
 - **Şifre:** `admin123`
