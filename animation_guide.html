@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşitme Cihazı Stok Yönetim Sistemi - Animasyon Rehberi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .demo-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: var(--box-shadow);
+        }
+        
+        .demo-item {
+            margin: 15px 0;
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .code-block {
+            background-color: #f5f5f5;
+            padding: 10px 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 10px 0;
+            width: 100%;
+            overflow-x: auto;
+        }
+        
+        .btn-example {
+            margin: 10px;
+        }
+        
+        .example-card {
+            width: 250px;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            text-align: center;
+        }
+        
+        .example-icon {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated background will be auto-added by animations.js -->
+    
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-hearing"></i>
+                    <span>İşitme Cihazı Stok Yönetim Paneli</span>
+                </div>
+                <div class="user-info">
+                    <a href="product_list.php" class="btn btn-sm btn-primary">
+                        <i class="fas fa-list"></i> Ürün Listesi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 2rem;">
+        <div class="card">
+            <div class="card-header">
+                <h1 class="fade-in-up">Animasyon Rehberi</h1>
+                <p class="fade-in-up delay-200">İşitme Cihazı Stok Yönetim Sistemi'nde kullanabileceğiniz animasyon sınıfları</p>
+            </div>
+            
+            <div class="card-body">
+                <section class="demo-section fade-in-up delay-300">
+                    <h2>Giriş</h2>
+                    <p>Bu rehber, sisteminizde kullanabileceğiniz animasyon sınıflarını ve özelliklerini göstermektedir. Animasyonlar, sisteminizi daha çekici ve kullanıcı dostu hale getirmek için tasarlanmıştır.</p>
+                    <p>Tüm animasyonlar otomatik olarak <code>animations.js</code> tarafından sayfalara uygulanır, ancak aşağıdaki sınıfları kullanarak özel animasyonlar da ekleyebilirsiniz.</p>
+                </section>
+                
+                <section class="demo-section fade-in-up delay-400">
+                    <h2>Temel Animasyon Sınıfları</h2>
+                    
+                    <div class="demo-item">
+                        <h3>Fade-in (Yavaşça Görünme)</h3>
+                        <div class="code-block">class="fade-in"</div>
+                        <button class="btn btn-primary" onclick="resetAnimation(this.nextElementSibling)">Tekrar İzle</button>
+                        <div class="example-card fade-in">Fade In Örneği</div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Fade-in-up (Yukarı Doğru Görünme)</h3>
+                        <div class="code-block">class="fade-in-up"</div>
+                        <button class="btn btn-primary" onclick="resetAnimation(this.nextElementSibling)">Tekrar İzle</button>
+                        <div class="example-card fade-in-up">Fade In Up Örneği</div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Fade-in-left (Soldan Görünme)</h3>
+                        <div class="code-block">class="fade-in-left"</div>
+                        <button class="btn btn-primary" onclick="resetAnimation(this.nextElementSibling)">Tekrar İzle</button>
+                        <div class="example-card fade-in-left">Fade In Left Örneği</div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Fade-in-right (Sağdan Görünme)</h3>
+                        <div class="code-block">class="fade-in-right"</div>
+                        <button class="btn btn-primary" onclick="resetAnimation(this.nextElementSibling)">Tekrar İzle</button>
+                        <div class="example-card fade-in-right">Fade In Right Örneği</div>
+                    </div>
+                </section>
+                
+                <section class="demo-section fade-in-up delay-500">
+                    <h2>Sürekli Animasyonlar</h2>
+                    
+                    <div class="demo-item">
+                        <h3>Floating (Yüzme)</h3>
+                        <div class="code-block">class="floating"</div>
+                        <div class="example-card floating">
+                            <i class="fas fa-hearing example-icon"></i>
+                            <p>Yüzen Kart</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Pulsing (Nabız)</h3>
+                        <div class="code-block">class="pulsing"</div>
+                        <div class="example-card">
+                            <i class="fas fa-bell example-icon pulsing"></i>
+                            <p>Nabız Efekti</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Bouncing (Zıplama)</h3>
+                        <div class="code-block">class="bouncing"</div>
+                        <div class="example-card">
+                            <i class="fas fa-arrow-down example-icon bouncing"></i>
+                            <p>Zıplama Efekti</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Spinning (Dönme)</h3>
+                        <div class="code-block">class="spinning"</div>
+                        <div class="example-card">
+                            <i class="fas fa-sync example-icon spinning"></i>
+                            <p>Dönme Efekti</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="demo-section fade-in-up delay-600">
+                    <h2>İnteraktif Elemanlar</h2>
+                    
+                    <div class="demo-item">
+                        <h3>Animated Button (Animasyonlu Buton)</h3>
+                        <div class="code-block">class="animated-btn"</div>
+                        <button class="btn btn-primary animated-btn">Animasyonlu Buton</button>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Animated Card (Animasyonlu Kart)</h3>
+                        <div class="code-block">class="animated-card"</div>
+                        <div class="example-card animated-card">
+                            <i class="fas fa-box example-icon"></i>
+                            <p>Animasyonlu Kart</p>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Animated Icon (Animasyonlu İkon)</h3>
+                        <div class="code-block">class="animated-icon"</div>
+                        <div class="example-card">
+                            <i class="fas fa-star example-icon animated-icon"></i>
+                            <p>Animasyonlu İkon</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="demo-section fade-in-up delay-700">
+                    <h2>Bildirimler ve Yüklenme Durumları</h2>
+                    
+                    <div class="demo-item">
+                        <h3>Toast Bildirimler</h3>
+                        <div class="code-block">showToast('Mesaj', 'success', 3000);</div>
+                        <button class="btn btn-success animated-btn" onclick="showToast('İşlem başarıyla tamamlandı!', 'success')">Başarı Bildirimi</button>
+                        <button class="btn btn-danger animated-btn" onclick="showToast('Bir hata oluştu!', 'error')">Hata Bildirimi</button>
+                        <button class="btn btn-warning animated-btn" onclick="showToast('Dikkat edilmesi gereken bir durum!', 'warning')">Uyarı Bildirimi</button>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Yükleme Spinnerları</h3>
+                        <div class="code-block">
+                            &lt;div class="spinner"&gt;&lt;/div&gt;<br>
+                            // veya JavaScript ile:<br>
+                            showSpinner(element, 'md');
+                        </div>
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <div class="spinner"></div>
+                            <button class="btn btn-primary animated-btn" onclick="showSpinnerDemo(this)">Spinner Göster</button>
+                            <div id="spinner-demo-container" style="width: 100px; height: 100px; display: flex; align-items: center; justify-content: center;"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="demo-item">
+                        <h3>Efektli Animasyonlar</h3>
+                        <div class="code-block">staggerAnimation('.element', 'fade-in-up', 0.1, 0.1);</div>
+                        <button class="btn btn-primary animated-btn" onclick="runStaggerDemo()">Sıralı Animasyon Göster</button>
+                        <div id="stagger-demo-container" style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                            <div class="example-card" style="width: 100px; height: 100px; margin: 5px;"></div>
+                            <div class="example-card" style="width: 100px; height: 100px; margin: 5px;"></div>
+                            <div class="example-card" style="width: 100px; height: 100px; margin: 5px;"></div>
+                            <div class="example-card" style="width: 100px; height: 100px; margin: 5px;"></div>
+                            <div class="example-card" style="width: 100px; height: 100px; margin: 5px;"></div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    
+    <script src="animations.js"></script>
+    <script>
+        // Function to reset an animation
+        function resetAnimation(element) {
+            const classes = element.className.split(' ').filter(c => 
+                c.startsWith('fade-in') || c === 'bouncing' || c === 'floating' || c === 'pulsing'
+            );
+            
+            if (classes.length > 0) {
+                // Remove animation classes
+                classes.forEach(cls => {
+                    element.classList.remove(cls);
+                });
+                
+                // Force reflow
+                void element.offsetWidth;
+                
+                // Add classes back
+                classes.forEach(cls => {
+                    element.classList.add(cls);
+                });
+            }
+        }
+        
+        // Function to show spinner demo
+        function showSpinnerDemo(btn) {
+            const container = document.getElementById('spinner-demo-container');
+            btn.disabled = true;
+            
+            // Clear and add spinner
+            container.innerHTML = '';
+            const spinner = showSpinner(container, 'md');
+            
+            // Remove after 2 seconds
+            setTimeout(() => {
+                spinner.remove();
+                btn.disabled = false;
+            }, 2000);
+        }
+        
+        // Function to run stagger demo
+        function runStaggerDemo() {
+            const container = document.getElementById('stagger-demo-container');
+            const cards = container.querySelectorAll('.example-card');
+            
+            // Reset first
+            cards.forEach(card => {
+                card.classList.remove('fade-in-up');
+                card.style.animationDelay = '';
+                card.style.opacity = '';
+                card.style.transform = '';
+            });
+            
+            // Force reflow
+            void container.offsetWidth;
+            
+            // Run stagger animation
+            staggerAnimation('#stagger-demo-container .example-card', 'fade-in-up', 0.1, 0.2);
+        }
+    </script>
+</body>
+</html> 

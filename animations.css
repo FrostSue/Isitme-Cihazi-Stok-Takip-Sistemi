@@ -1,0 +1,412 @@
+/* animations.css - Shared animations for hearing aid stock management system */
+
+:root {
+    --primary: #3498db;
+    --primary-dark: #2980b9;
+    --primary-light: #5dade2;
+    --secondary: #2ecc71;
+    --secondary-dark: #27ae60;
+    --secondary-light: #58d68d;
+    --accent: #9b59b6;
+    --accent-light: #bb8ecc;
+    --warning: #f39c12;
+    --error: #e74c3c;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --white: #ffffff;
+    --light-bg: #f4f7fa;
+    --box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --animation-timing: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* ===== ANIMATION KEYFRAMES ===== */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-10px); }
+    60% { transform: translateY(-5px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@keyframes colorShift {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(30deg); }
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+@keyframes wave {
+    0% { transform: translateX(0) scaleY(1); }
+    25% { transform: translateX(-25%) scaleY(0.8); }
+    50% { transform: translateX(-50%) scaleY(1.2); }
+    75% { transform: translateX(-75%) scaleY(0.9); }
+    100% { transform: translateX(-100%) scaleY(1); }
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -1000px 0; }
+    100% { background-position: 1000px 0; }
+}
+
+/* ===== ANIMATED ELEMENTS ===== */
+
+/* Animated background */
+.animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--light-bg) 0%, #c3cfe2 100%);
+}
+
+/* Ambient lights */
+.light {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.4;
+    z-index: -1;
+    animation: pulse 8s infinite alternate ease-in-out;
+}
+
+.light-1 {
+    width: 300px;
+    height: 300px;
+    background-color: rgba(52, 152, 219, 0.2);
+    top: 20%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.light-2 {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(46, 204, 113, 0.2);
+    bottom: 30%;
+    right: 20%;
+    animation-delay: 2s;
+}
+
+.light-3 {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(155, 89, 182, 0.2);
+    top: 60%;
+    left: 30%;
+    animation-delay: 4s;
+}
+
+/* Wave effects */
+.wave {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(52, 152, 219, 0.05), transparent);
+    animation: wave 15s infinite linear;
+}
+
+.wave:nth-child(1) {
+    bottom: 0;
+    animation-delay: 0s;
+    height: 60px;
+    opacity: 0.3;
+}
+
+.wave:nth-child(2) {
+    bottom: 10%;
+    animation-delay: -5s;
+    height: 80px;
+    opacity: 0.2;
+}
+
+.wave:nth-child(3) {
+    bottom: 20%;
+    animation-delay: -2s;
+    height: 40px;
+    opacity: 0.1;
+}
+
+/* Particle */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(52, 152, 219, 0.3);
+    animation: float 15s infinite linear;
+    opacity: 0.6;
+}
+
+/* ===== ANIMATED CLASSES ===== */
+.fade-in {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.5s var(--animation-timing) forwards;
+    opacity: 0;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.5s var(--animation-timing) forwards;
+    opacity: 0;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.5s var(--animation-timing) forwards;
+    opacity: 0;
+}
+
+.floating {
+    animation: float 6s ease-in-out infinite;
+}
+
+.pulsing {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.bouncing {
+    animation: bounce 2s infinite;
+}
+
+.color-shifting {
+    animation: colorShift 8s infinite alternate;
+}
+
+.spinning {
+    animation: spin 2s linear infinite;
+}
+
+/* Animation delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+
+/* Button effects */
+.animated-btn {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.animated-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.animated-btn:active {
+    transform: translateY(1px);
+}
+
+/* Button shine effect */
+.animated-btn::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(30deg) translateX(-150%);
+    transition: transform 0.5s ease;
+}
+
+.animated-btn:hover::after {
+    transform: rotate(30deg) translateX(150%);
+}
+
+/* Card animations */
+.animated-card {
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.animated-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Table row animations */
+.animated-row {
+    transition: all 0.2s ease;
+}
+
+.animated-row:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+    transform: translateX(5px);
+}
+
+/* Input field animations */
+.animated-input {
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.animated-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Icon animations */
+.animated-icon {
+    transition: all 0.3s ease;
+}
+
+.animated-icon:hover {
+    transform: scale(1.2);
+    color: var(--primary);
+}
+
+/* Loading spinner */
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid rgba(52, 152, 219, 0.2);
+    border-radius: 50%;
+    border-top-color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+/* Shimmer effect for loading states */
+.shimmer {
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 1000px 100%;
+    animation: shimmer 2s infinite linear;
+}
+
+/* Toast notifications */
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    background-color: rgba(46, 204, 113, 0.9);
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    transform: translateX(100%);
+    opacity: 0;
+    z-index: 1000;
+    animation: fadeInLeft 0.5s forwards;
+}
+
+.toast.error {
+    background-color: rgba(231, 76, 60, 0.9);
+}
+
+.toast.warning {
+    background-color: rgba(243, 156, 18, 0.9);
+}
+
+/* Tooltip animation */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+} 

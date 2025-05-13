@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İşitme Cihazı Stok Yönetim Paneli</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: var(--light-bg);
+        }
+        .redirect-container {
+            text-align: center;
+            background-color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--box-shadow);
+            max-width: 500px;
+            width: 90%;
+        }
+        .logo {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        h1 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+        p {
+            margin-bottom: 2rem;
+            color: var(--text-light);
+        }
+        .redirect-progress {
+            height: 4px;
+            background-color: var(--border-color);
+            border-radius: 2px;
+            margin-bottom: 2rem;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: var(--primary-color);
+            border-radius: 2px;
+            transition: width 2.5s linear;
+        }
+        .animation-guide-link {
+            display: block;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+    </style>
+    <script>
+        // Redirect to login page after a short delay
+        window.onload = function() {
+            const progressBar = document.querySelector('.progress-bar');
+            progressBar.style.width = '100%';
+            
+            setTimeout(function() {
+                window.location.href = 'login.php';
+            }, 2500);
+        };
+    </script>
+</head>
+<body>
+    <div class="redirect-container animated-card fade-in-up">
+        <div class="logo">
+            <i class="fas fa-hearing floating"></i>
+        </div>
+        <h1 class="fade-in-up delay-200">İşitme Cihazı Stok Yönetim Paneli</h1>
+        <p class="fade-in-up delay-300">İşitme cihazı envanter sistemine hoş geldiniz. Giriş sayfasına yönlendiriliyorsunuz...</p>
+        <div class="redirect-progress fade-in-up delay-400">
+            <div class="progress-bar"></div>
+        </div>
+        <a href="login.php" class="btn btn-primary animated-btn fade-in-up delay-500">Şimdi Giriş Yap</a>
+        <a href="animation_guide.html" class="animation-guide-link fade-in-up delay-600">Animasyon Rehberini Görüntüle</a>
+    </div>
+    
+    <script src="animations.js"></script>
+</body>
+</html>
